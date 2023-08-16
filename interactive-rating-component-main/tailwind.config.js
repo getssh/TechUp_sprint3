@@ -5,6 +5,10 @@ module.exports = {
     extend: {
       fontFamily: {
         overpass: ['Overpass', 'sans-serif'],
+        screens: {
+          'xs': { 'max': '399px' },
+          'sm': '641px',
+        },
       },
     },
   },
