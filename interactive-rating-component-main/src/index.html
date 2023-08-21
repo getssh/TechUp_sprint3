@@ -18,8 +18,8 @@
 <body class="font-overpass bg-[#080808] flex justify-center items-center min-h-screen">
 
   <!-- Rating state start -->
-  <div class="bg-[#2C2C4E] flex flex-col flex-nowrap gap-4 justify-center items-start p-5 mx-2
-  max-w-640 sm:max-w-none sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4 rounded-2xl">
+  <div class="bg-[#2C2C4E] flex flex-col flex-nowrap gap-4 justify-center items-start px-5 py-10 mx-2
+  max-w-640 sm:max-w-none sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4 rounded-2xl" style="display: none;">
     <img class="text-left" src="./images/icon-star.svg" alt="start icon" />
     <h3 class="text-white text-left">How did we do?</h3>
   
@@ -28,31 +28,41 @@
       to help us improve our offering!
     </p>
     
-    <div class="flex gap-3 justify-evenly">
-      <div class="text-[#8A8A8A]">1</div>
-      <div class="text-[#8A8A8A]">2</div>
-      <div class="text-[#8A8A8A]">3</div>
-      <div class="text-[#8A8A8A]">4</div>
-      <div class="text-[#8A8A8A]">5</div>
+    <div class="flex justify-around w-full">
+      <div class="text-[#8A8A8A] bg-[#414444] hover:bg-[#fc7613] hover:cursor-pointer
+      hover:text-white w-12 h-12 rounded-full flex justify-center items-center"><p>1</p></div>
+      <div class="text-[#8A8A8A] bg-[#414444] hover:bg-[#fc7613] hover:cursor-pointer
+      hover:text-white w-12 h-12 rounded-full flex justify-center items-center"><p>2</p></div>
+      <div class="text-[#8A8A8A] bg-[#414444] hover:bg-[#fc7613] hover:cursor-pointer
+      hover:text-white w-12 h-12 rounded-full flex justify-center items-center"><p>3</p></div>
+      <div class="text-[#8A8A8A] bg-[#414444] hover:bg-[#fc7613] hover:cursor-pointer
+      hover:text-white w-12 h-12 rounded-full flex justify-center items-center"><p>4</p></div>
+      <div class="text-[#8A8A8A] bg-[#414444] hover:bg-[#fc7613] hover:cursor-pointer
+      hover:text-white w-12 h-12 rounded-full flex justify-center items-center"><p>5</p></div>
     </div>
   
-    <button class="bg-[#fc7613] text-white w-full px-4 py-2 rounded-2xl mx-auto">
-      Submit
+    <button class="font-medium bg-[#fc7613] text-white hover:bg-white hover:text-[#fc7613] w-full px-4 py-2 rounded-3xl mx-auto mt-3">
+      SUBMIT
     </button>
   </div>
 
-  <!-- Rating state end -->
+  <div class="bg-[#2C2C4E] flex flex-col flex-nowrap gap-4 justify-center items-center px-5 py-10 mx-2
+  max-w-640 sm:max-w-none sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4 rounded-2xl">
+    <!-- Rating state end -->
 
-  <!-- Thank you state start -->
+    <!-- Thank you state start -->
+    <p class="text-[#fc7613]">
+      You selected Add 4 out of 5
+    </p>
 
-  <!-- You selected Add rating here out of 5 -->
+    <h1 class="text-white">Thank you!</h1>
 
-  <!-- Thank you!
+    <p class="text-[#8A8A8A] text-center">
+      We appreciate you taking the time to give a rating. If you ever need more support, 
+      don’t hesitate to get in touch!
+    </p>
 
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch! -->
-
-  <!-- Thank you state end -->
-
+    <!-- Thank you state end -->
+  </div>
 </body>
 </html>
