@@ -534,19 +534,11 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.flex {
-  display: flex;
+.font-inter {
+  font-family: Inter, sans-serif;
 }
 
-.flex-row {
-  flex-direction: row;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.text-red-700 {
+:is(.dark .dark\:text-red-500) {
   --tw-text-opacity: 1;
-  color: rgb(185 28 28 / var(--tw-text-opacity));
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
