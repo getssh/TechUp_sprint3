@@ -2,7 +2,7 @@ let rateUs = document.querySelector('.rate-us');
 let thankYou= document.querySelector('.thank-you');
 let rated = document.querySelector('.rated');
 let submitBtn = document.querySelector('.rate-submit');
-let rateValue = "";
+let rateValue = 0;
 
 const selectedNum = document.querySelectorAll(".rate");
 let selectedDiv = null;
