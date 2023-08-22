@@ -16,7 +16,7 @@
   /* 2 */
   border-style: solid;
   /* 2 */
-  border-color: #e5e7eb;
+  border-color: currentColor;
   /* 2 */
 }
 
@@ -434,6 +434,17 @@ video {
   display: none;
 }
 
+:root {
+  /* For hsl(198deg 93% 60% / <alpha-value>) */
+  --color-primary: 163deg 72% 41%;
+  --color-secondary: 356deg 69% 56%;
+  --color-facebook: 208deg 92% 53%;
+  --color-twitter: 203deg 89% 53%;
+  --color-insta-one: 37deg 97% 70%;
+  --color-insta-two: 329deg 70% 58%;
+  --color-youtube: 348deg 97% 39%;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -534,11 +545,103 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.pl-10 {
+  padding-left: 2.5rem;
+}
+
+.pr-5 {
+  padding-right: 1.25rem;
+}
+
 .font-inter {
   font-family: Inter, sans-serif;
 }
 
-:is(.dark .dark\:text-red-500) {
+.text-\[hsl\(163\2c 72\%\2c 41\%\)\] {
   --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
+  color: hsl(163 72% 41% / var(--tw-text-opacity));
+}
+
+.text-primary {
+  --tw-text-opacity: 1;
+  color: hsl(var(--color-primary) / var(--tw-text-opacity));
+}
+
+.text-youtube {
+  --tw-text-opacity: 1;
+  color: hsl(var(--color-youtube) / var(--tw-text-opacity));
+}
+
+.text-secondary {
+  --tw-text-opacity: 1;
+  color: hsl(var(--color-secondary) / var(--tw-text-opacity));
+}
+
+.text-facebook {
+  --tw-text-opacity: 1;
+  color: hsl(var(--color-facebook) / var(--tw-text-opacity));
+}
+
+.text-twitter {
+  --tw-text-opacity: 1;
+  color: hsl(var(--color-twitter) / var(--tw-text-opacity));
+}
+
+.text-instaone {
+  --tw-text-opacity: 1;
+  color: hsl(var(--color-insta-one) / var(--tw-text-opacity));
+}
+
+.text-instatwo {
+  --tw-text-opacity: 1;
+  color: hsl(var(--color-insta-two) / var(--tw-text-opacity));
+}
+
+@media (min-width: 1024px) {
+  .lg\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
 }
