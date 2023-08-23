@@ -16,3 +16,11 @@
     --light-text-two: 228deg 12% 44%;
   }
 }
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 100,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
