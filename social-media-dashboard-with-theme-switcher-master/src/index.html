@@ -18,148 +18,156 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body class="font-inter dark pr-5 pl-10 flex flex-col justify-center">
-  <div class="header flex justify-between">
-    <div>
-      <h2>Social Media Dashboard</h2>
-      <p>Total Followers: 23,004</p>
+<body class="font-inter dark flex justify-center">
+  <div class="container w-11/12">
+    <div class="header flex justify-between py-5 w-11/12">
+      <div>
+        <h2>Social Media Dashboard</h2>
+        <p>Total Followers: 23,004</p>
+      </div>
+      <p>
+        Dark Mode
+      </p>
     </div>
-    <p>
-      Dark Mode
-    </p>
-  </div>
-
-  <div class="grid grid-cols-4 gap-4">
-    <div class="flex flex-col">
-      <div>
-        @nathanf
-      </div>
-      <h3>1987</h3>     
-      <p>Followers</p>
-      <p>12 Today</p>
-    </div>
-    <div>
-      <div>
-        @nathanf
-      </div>
-      <h3>1044</h3>
-      <p>Followers</p>
-      <p>99 Today</p>
-    </div>
-    <div>
-      <div>
-        @realnathanf
-      </div>
-      <h3>11k</h3>
-      <p>Followers</p>
-      <p>1099 Today</p>
-    </div>
-    <div>
-      <div>
-        Nathan F.
-      </div>
-      <h3>8239</h3>
-      <p>Subscribers</p>
-      <p>144 Today</p>
-    </div>
-  </div>
-
-
-  <h4>Overview - Today</h4>
-  <div class="grid grid-cols-4 gap-4">
-    <div>
-      <div>
-        <p>Page Views</p>
-        <img/>
-      </div>
-      <div>
-        <h5>87</h5>
-        <p>3%</p>
-      </div>
-    </div>
-
-    <div>
-      <div>
-        <p>Likes</p>
-        <img/>
-      </div>
-      <div>
-        <h5>52</h5>
-        <p>2%</p>
-      </div>
-    </div>
-
-    <div>
-      <div>
-        <p>Likes</p>
-        <img/>
-      </div>
-      <div>
-        <h5>5462</h5>
-        <p>2257%</p>
-      </div>
-    </div>
-
-    <div>
-      <div>
-        <p> Profile Views</p>
-        <img/>
-      </div>
-      <div>
-        <h5>52k</h5>
-        <p>  1375%</p>
-      </div>
-    </div>
-
-    <div>
-      <div>
-        <p> Retweets</p>
-        <img/>
-      </div>
-      <div>
-        <h5>117</h5>
-        <p>303%</p>
-      </div>
-    </div>
-
-    <div>
-      <div>
-        <p>Likes</p>
-        <img/>
-      </div>
-      <div>
-        <h5>507</h5>
-        <p>554%</p>
-      </div>
-    </div>
-
-    <div>
-      <div>
-        <p>Likes</p>
-        <img/>
-      </div>
-      <div>
-        <h5>107</h5>
-        <p>19%</p>
-      </div>
-    </div>
-
-    <div>
-      <div>
-        <p>Total Views</p>
-        <img/>
-      </div>
-      <div>
-        <h5>1407</h5>
-        <p>12%</p>
-      </div>
-    </div>
-  </div>
-
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-5">
+      <div class="bg-lightcardbg py-5 border-t-4 border-facebook">
+        <div class="flex justify-center py-2 gap-2">
+          <img src="./images/icon-facebook.svg" alt="facebook icon" class="w-6"/>
+          <p>@nathanf</p>
+        </div>
+        <div class="flex flex-col justify-center items-center pt-3">
+          <h1 class="text-5xl font-medium">1987</h1>     
+          <p class="pb-5 tracking-widest text-lighttexttwo">Followers</p>
+          <p class="text-primary font-medium">12 Today</p>
+        </div>
+      </div>
+      <div class="bg-lightcardbg py-5 border-t-4 border-twitter">
+        <div class="flex justify-center py-2 gap-2">
+          <img src="./images/icon-twitter.svg" alt="twitter icon" class="w-6"/>
+          <p>@nathanf</p>
+        </div>
+        <div class="flex flex-col justify-center items-center pt-3">
+          <h1 class="text-5xl font-medium">1044</h1>
+          <p class="pb-5 tracking-widest text-lighttexttwo">Followers</p>
+          <p  class="text-primary font-medium">99 Today</p>
+        </div>
+      </div>
+      <div class="bg-lightcardbg py-5 border-t-4 border-instaone">
+        <div class="flex justify-center py-2 gap-2">
+          <img src="./images/icon-instagram.svg" alt="insta icon" class="w-6"/>
+          <p>@realnathanf</p>
+        </div>
+        <div class="flex flex-col justify-center items-center pt-3">
+          <h1 class="text-5xl font-medium">11k</h1>
+          <p class="pb-5 tracking-widest text-lighttexttwo">Followers</p>
+          <p  class="text-primary font-medium">1099 Today</p>
+        </div>
+      </div>
+      <div class="bg-lightcardbg py-5 border-t-4 border-youtube">
+        <div class="flex justify-center py-2 gap-2">
+          <img src="./images/icon-youtube.svg" alt="youtube icon" class="w-6"/>
+          <p>Nathan F.</p>
+        </div>
+        <div class="flex flex-col justify-center items-center pt-3">
+          <h1 class="text-5xl font-medium">8239</h1>
+          <p class="pb-5 tracking-widest text-lighttexttwo">Subscribers</p>
+          <p  class="text-secondary font-medium">144 Today</p>
+        </div>
+      </div>
+    </div>
+  
+  
+    <h4 class="py-5 self-start mt-10">Overview - Today</h4>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
+      <div class="bg-lightcardbg">
+        <div>
+          <p>Page Views</p>
+          <img  src="./images/icon-facebook.svg" alt="facebook icon" />
+        </div>
+        <div>
+          <h5>87</h5>
+          <p>3%</p>
+        </div>
+      </div>
+  
+      <div class="bg-lightcardbg">
+        <div>
+          <p>Likes</p>
+          <img  src="./images/icon-facebook.svg" alt="facebook icon" />
+        </div>
+        <div>
+          <h5>52</h5>
+          <p>2%</p>
+        </div>
+      </div>
+  
+      <div class="bg-lightcardbg">
+        <div>
+          <p>Likes</p>
+          <img src="./images/icon-instagram.svg" alt="insta icon" />
+        </div>
+        <div>
+          <h5>5462</h5>
+          <p>2257%</p>
+        </div>
+      </div>
+  
+      <div class="bg-lightcardbg">
+        <div>
+          <p> Profile Views</p>
+          <img src="./images/icon-instagram.svg" alt="insta icon" />
+        </div>
+        <div>
+          <h5>52k</h5>
+          <p>  1375%</p>
+        </div>
+      </div>
+  
+      <div class="bg-lightcardbg">
+        <div>
+          <p> Retweets</p>
+          <img src="./images/icon-twitter.svg" alt="twitter icon" />
+        </div>
+        <div>
+          <h5>117</h5>
+          <p>303%</p>
+        </div>
+      </div>
+  
+      <div class="bg-lightcardbg">
+        <div>
+          <p>Likes</p>
+          <img src="./images/icon-twitter.svg" alt="twitter icon" />
+        </div>
+        <div>
+          <h5>507</h5>
+          <p>554%</p>
+        </div>
+      </div>
+  
+      <div class="bg-lightcardbg">
+        <div>
+          <p>Likes</p>
+          <img src="./images/icon-youtube.svg" alt="youtube icon" />
+        </div>
+        <div>
+          <h5>107</h5>
+          <p>19%</p>
+        </div>
+      </div>
+  
+      <div class="bg-lightcardbg">
+        <div>
+          <p>Total Views</p>
+          <img src="./images/icon-youtube.svg" alt="youtube icon" />
+        </div>
+        <div>
+          <h5>1407</h5>
+          <p>12%</p>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>

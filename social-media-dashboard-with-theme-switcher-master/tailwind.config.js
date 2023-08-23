@@ -11,10 +11,16 @@ module.exports = {
       instaone: 'hsl(var(--color-insta-one) / <alpha-value>)',
       instatwo: 'hsl(var(--color-insta-two) / <alpha-value>)',
       youtube: 'hsl(var(--color-youtube) / <alpha-value>)',
+      lightcardbg: 'hsl(var(--light-card-bg) / <alpha-value>)',
+      lighttextone: 'hsl(var(--light-text-one) / <alpha-value>)',
+      lighttexttwo: 'hsl(var(--light-text-two) / <alpha-value>)',
     },
     extend: {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
+      },
+      backgroundImage: {
+        gradient: 'linear-gradient(to right, var(--color-insta-one), var(--color-insta-two))',
       },
     },
   },
