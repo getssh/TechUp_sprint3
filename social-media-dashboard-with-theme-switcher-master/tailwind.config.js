@@ -23,6 +23,7 @@ module.exports = {
         darkbluetwo: 'hsl(var(--dark-blue-two) / <alpha-value>)',
         darkbluethree: 'hsl(var(--dark-blue-three) / <alpha-value>)',
         darkbluefour: 'hsl(var(--dark-blue-four) / <alpha-value>)',
+        darktopbg: 'hsl(var(--dark-top-bg) / <alpha-value>)',
       },
     },
   },
