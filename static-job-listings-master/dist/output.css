@@ -533,3 +533,7 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+
+.font-league {
+  font-family: League, sans-serif;
+}
