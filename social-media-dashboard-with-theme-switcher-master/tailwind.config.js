@@ -16,6 +16,7 @@ module.exports = {
         instatwo: 'hsl(var(--color-insta-two) / <alpha-value>)',
         youtube: 'hsl(var(--color-youtube) / <alpha-value>)',
         lightcardbg: 'hsl(var(--light-card-bg) / <alpha-value>)',
+        lighttopbg: 'hsl(var(  --light-top-bg) / <alpha-value>)',
         lighttextone: 'hsl(var(--light-text-one) / <alpha-value>)',
         lighttexttwo: 'hsl(var(--light-text-two) / <alpha-value>)',
         darkblueone: 'hsl(var(--dark-blue-one) / <alpha-value>)',
