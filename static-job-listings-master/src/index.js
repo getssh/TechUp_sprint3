@@ -1,8 +1,13 @@
 const container = document.querySelector('.container');
+const filters = [];
+
 fetch('../data.json')
     .then(response => response.json())
     .then(data => {
-        data.forEach((job) => {
+        const allJobs = data;
+        let filteredJobs = filters.length > 0 ? filterJobsByFilters(allJobs, filters) : allJobs;
+
+        filteredJobs.forEach((job) => {
             const jobContainer = document.createElement('div');
             jobContainer.className = `flex justify-between items-center w-4/5 my-3 px-3 ${job.featured ? 'border-l-4 border-primary' : ''}`;
 
@@ -58,16 +63,18 @@ fetch('../data.json')
             roleLanguagesTools.appendChild(level);
 
             job.languages.forEach(language => {
-                const languageElement = document.createElement('p');
-                languageElement.textContent = language;
-                roleLanguagesTools.appendChild(languageElement);
-            });
+              const languageElement = document.createElement('p');
+              languageElement.textContent = language;
+              languageElement.addEventListener('click', () => addToFiltersAndRender(language));
+              roleLanguagesTools.appendChild(languageElement);
+          });
 
-            job.tools.forEach(tool => {
-                const toolElement = document.createElement('p');
-                toolElement.textContent = tool;
-                roleLanguagesTools.appendChild(toolElement);
-            });
+          job.tools.forEach(tool => {
+              const toolElement = document.createElement('p');
+              toolElement.textContent = tool;
+              toolElement.addEventListener('click', () => addToFiltersAndRender(tool));
+              roleLanguagesTools.appendChild(toolElement);
+          });
 
             jobContainer.appendChild(jobDetails);
             jobContainer.appendChild(roleLanguagesTools);
@@ -79,3 +86,12 @@ fetch('../data.json')
         console.error('Data loading error:', error);
         container.innerHTML = 'Error couldnt load data';
     });
+
+console.log(filters);
+function filterJobsByFilters(jobs, filters) {
+  return jobs.filter(job => {
+      return (
+          filters.every(filter => job.role.includes(filter) || job.level.includes(filter) || job.languages.includes(filter) || job.tools.includes(filter))
+      );
+  });
+}
