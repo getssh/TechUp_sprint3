@@ -4,7 +4,7 @@ const filters = [];
 let allJobs = [];
 
 const filtersSection = document.createElement('div');
-filtersSection.className = 'filters-section flex justify-start gap-2 bg-white py-3 px-4';
+filtersSection.className = 'filters-section flex bg-white justify-start gap-2 py-3 px-4';
 // document.body.insertBefore(filtersSection, container);
 
 fetch('../data.json')
@@ -22,11 +22,11 @@ function renderFilters() {
   filtersSection.innerHTML = '';
   filters.forEach(filter => {
     const filterElement = document.createElement('div');
-    filterElement.className = 'filter';
+    filterElement.className = 'filter text-primary bg-lighbg px-2 rounded-lg flex flex-between';
     filterElement.textContent = filter;
 
     const deleteButton = document.createElement('span');
-    deleteButton.className = 'delete-button';
+    deleteButton.className = 'delete-button hover:cursor-pointer px-2 bg-verydark text-white';
     deleteButton.textContent = 'X';
     deleteButton.addEventListener('click', () => removeFilter(filter));
 
@@ -36,7 +36,7 @@ function renderFilters() {
 
   if (filters.length > 0) {
       const clearFiltersButton = document.createElement('button');
-      clearFiltersButton.className = 'clear-filters-button self-end';
+      clearFiltersButton.className = 'clear-filters-button self-end text-primary font-bold hover:underline';
       clearFiltersButton.textContent = 'Clear';
       clearFiltersButton.addEventListener('click', clearAllFilters);
       filtersSection.appendChild(clearFiltersButton);
@@ -52,7 +52,7 @@ function renderJobs(jobs) {
     container.appendChild(filtersSection);
     filteredJobs.forEach((job) => {
         const jobContainer = document.createElement('div');
-        jobContainer.className = `flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap justify-between items-center drop-shadow bg-white w-4/5 my-3 px-3 ${job.featured ? 'border-l-4 border-primary' : ''}`;
+        jobContainer.className = `flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap justify-between items-center drop-shadow-md bg-white w-4/5 my-3 px-3 ${job.featured ? 'border-l-4 border-primary' : ''}`;
 
         const jobDetails = document.createElement('div');
         jobDetails.className = 'flex flex-col sm:flex-row items-center gap-5 p-2';
@@ -147,7 +147,6 @@ function toggleFilter(filterValue) {
   } else {
       filters.push(filterValue);
   }
-  
   renderJobs(allJobs);
 }
 
