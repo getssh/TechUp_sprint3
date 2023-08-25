@@ -20,7 +20,15 @@ fetch('../data.json')
 
 function renderFilters() {
   filtersSection.innerHTML = '';
-  
+
+  if (filters.length > 0) {
+      const clearFiltersButton = document.createElement('button');
+      clearFiltersButton.className = 'clear-filters-button';
+      clearFiltersButton.textContent = 'Clear Filters';
+      clearFiltersButton.addEventListener('click', clearAllFilters);
+      filtersSection.appendChild(clearFiltersButton);
+  }
+
   filters.forEach(filter => {
       const filterElement = document.createElement('div');
       filterElement.className = 'filter';
@@ -34,7 +42,7 @@ function renderFilters() {
       filterElement.appendChild(deleteButton);
       filtersSection.appendChild(filterElement);
   });
-}
+  }
 
 function renderJobs(jobs) {
     container.innerHTML = '';
@@ -134,6 +142,11 @@ function toggleFilter(filterValue) {
 
 function removeFilter(filterValue) {
   filters.splice(filters.indexOf(filterValue), 1);
+  renderJobs(allJobs);
+}
+
+function clearAllFilters() {
+  filters.length = 0;
   renderJobs(allJobs);
 }
 
