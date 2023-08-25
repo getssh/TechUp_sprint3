@@ -3,6 +3,10 @@ const filters = [];
 
 let allJobs = [];
 
+const filtersSection = document.createElement('div');
+filtersSection.className = 'filters-section';
+document.body.insertBefore(filtersSection, container);
+
 fetch('../data.json')
     .then(response => response.json())
     .then(data => {
@@ -14,10 +18,29 @@ fetch('../data.json')
         container.innerHTML = 'Error couldnt load data';
     });
 
+function renderFilters() {
+  filtersSection.innerHTML = '';
+  
+  filters.forEach(filter => {
+      const filterElement = document.createElement('div');
+      filterElement.className = 'filter';
+      filterElement.textContent = filter;
+
+      const deleteButton = document.createElement('span');
+      deleteButton.className = 'delete-button';
+      deleteButton.textContent = 'X';
+      deleteButton.addEventListener('click', () => removeFilter(filter));
+
+      filterElement.appendChild(deleteButton);
+      filtersSection.appendChild(filterElement);
+  });
+}
+
 function renderJobs(jobs) {
     container.innerHTML = '';
 
     const filteredJobs = filters.length > 0 ? filterJobsByFilters(jobs, filters) : jobs;
+    renderFilters();
 
     filteredJobs.forEach((job) => {
         const jobContainer = document.createElement('div');
@@ -106,6 +129,11 @@ function toggleFilter(filterValue) {
       filters.push(filterValue);
   }
   
+  renderJobs(allJobs);
+}
+
+function removeFilter(filterValue) {
+  filters.splice(filters.indexOf(filterValue), 1);
   renderJobs(allJobs);
 }
 
