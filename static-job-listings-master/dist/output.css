@@ -601,6 +601,10 @@ video {
   align-items: center;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -609,17 +613,20 @@ video {
   justify-content: space-between;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
 .gap-5 {
   gap: 1.25rem;
 }
 
 .border-l-4 {
   border-left-width: 4px;
-}
-
-.border-lighbg {
-  --tw-border-opacity: 1;
-  border-color: hsl(var(--light-gray-bg) / var(--tw-border-opacity));
 }
 
 .border-primary {
