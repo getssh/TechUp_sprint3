@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+  :root {
+    --color-primary: 213deg 19% 18%;
+    --color-secondary: 217deg 12% 63%;
+    --color-facebook: 208deg 92% 53%;
+    --color-twitter: 203deg 89% 53%;
+  }
+}

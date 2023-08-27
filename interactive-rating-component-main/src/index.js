@@ -4,6 +4,10 @@ let rated = document.querySelector('.rated');
 let submitBtn = document.querySelector('.rate-submit');
 let rateValue = 0;
 
+if (rateValue === 0) {
+  submitBtn.classList.add('disabled:pointer-events-none')
+}
+
 const selectedNum = document.querySelectorAll(".rate");
 let selectedDiv = null;
 

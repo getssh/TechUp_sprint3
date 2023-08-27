@@ -10,6 +10,12 @@ module.exports = {
         'xs': { 'max': '399px' },
         'sm': '520px',
       },
+      colors: {
+        primary: 'hsl(var(--color-primary) / <alpha-value>)',
+        secondary: 'hsl(var(--color-secondary) / <alpha-value>)',
+        facebook: 'hsl(var(--color-facebook) / <alpha-value>)',
+        twitter: 'hsl(var(--color-twitter) / <alpha-value>)',
+      },
     },
   },
   plugins: [],

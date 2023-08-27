@@ -4,7 +4,7 @@ const filters = [];
 let allJobs = [];
 
 const filtersSection = document.createElement('div');
-filtersSection.className = 'filters-section flex bg-white justify-start gap-2 py-3 px-4';
+filtersSection.className = 'filters-section flex flex-wrap sm:flex-nowrap bg-white justify-start gap-2 py-3 px-4';
 // document.body.insertBefore(filtersSection, container);
 
 fetch('../data.json')
@@ -26,7 +26,7 @@ function renderFilters() {
     filterElement.textContent = filter;
 
     const deleteButton = document.createElement('span');
-    deleteButton.className = 'delete-button hover:cursor-pointer px-2 bg-verydark text-white';
+    deleteButton.className = 'delete-button hover:cursor-pointer hover:bg-verydark px-2 bg-primary text-white rounded-md ml-3';
     deleteButton.textContent = 'X';
     deleteButton.addEventListener('click', () => removeFilter(filter));
 
