@@ -7,7 +7,7 @@ const filtersSection = document.createElement('div');
 filtersSection.className = 'filters-section flex flex-wrap sm:flex-nowrap bg-white justify-start gap-2 py-3 px-4';
 // document.body.insertBefore(filtersSection, container);
 
-fetch('../data.json')
+fetch('https://my.api.mockaroo.com/user.json?key=3ae8be40')
     .then(response => response.json())
     .then(data => {
         allJobs = data;
