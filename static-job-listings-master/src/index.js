@@ -4,7 +4,7 @@ const filters = [];
 let allJobs = [];
 
 const filtersSection = document.createElement('div');
-filtersSection.className = 'filters-section flex flex-wrap sm:flex-nowrap bg-white justify-start gap-2 py-3 px-4';
+filtersSection.className = `filters-section flex flex-wrap sm:flex-nowrap bg-white justify-start gap-2 py-3 px-4`;
 // document.body.insertBefore(filtersSection, container);
 
 fetch('https://demo8445262.mockable.io/joblisting')
@@ -52,7 +52,7 @@ function renderJobs(jobs) {
     container.appendChild(filtersSection);
     filteredJobs.forEach((job) => {
         const jobContainer = document.createElement('div');
-        jobContainer.className = `flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap justify-between items-center drop-shadow-md bg-white w-4/5 my-3 px-3 ${job.featured ? 'border-l-4 border-primary' : ''}`;
+        jobContainer.className = `flex py-5 flex-col md:flex-col xl:flex-row sm:flex-wrap lg:flex-nowrap justify-between items-center drop-shadow-md bg-white w-4/5 my-3 px-3 ${job.featured ? 'border-l-4 border-primary' : ''}`;
 
         const jobDetails = document.createElement('div');
         jobDetails.className = 'flex flex-col sm:flex-row items-center gap-5 p-2';
@@ -72,10 +72,10 @@ function renderJobs(jobs) {
         companyName.textContent = job.company;
         const isNew = document.createElement('p');
         isNew.textContent = job.new ? 'New!' : '';
-        isNew.className = job.new ? 'text-white bg-primary px-2 rounded-xl' : '';
+        isNew.className = job.new ? 'text-white bg-primary font-semibold px-3 py-1 text-sm uppercase rounded-2xl' : '';
         const isFeatured = document.createElement('p');
         isFeatured.textContent = job.featured ? 'Featured' : '';
-        isFeatured.className = job.featured ? 'text-white bg-verydark px-3 rounded-xl' : '';
+        isFeatured.className = job.featured ? 'text-white uppercase text-sm bg-verydark px-3 py-1 rounded-2xl' : '';
         companyInfo.appendChild(companyName);
         companyInfo.appendChild(isNew);
         companyInfo.appendChild(isFeatured);
@@ -86,43 +86,44 @@ function renderJobs(jobs) {
         position.className = 'font-bold cursor-pointer hover:text-primary'
         textDetails.appendChild(position);
 
-        const contractDetails = document.createElement('div');
-        contractDetails.className = 'flex gap-2';
-        const postedAt = document.createElement('p');
+        const contractDetails = document.createElement('ul');
+        contractDetails.className = 'flex gap-10 list-none';
+        const postedAt = document.createElement('li');
         postedAt.textContent = job.postedAt;
         postedAt.className = 'text-darkgray';
-        const contractType = document.createElement('p');
+        const contractType = document.createElement('li');
         contractType.textContent = job.contract;
-        contractType.className = 'text-darkgray';
-        const location = document.createElement('p');
+        contractType.className = 'text-darkgray list-disc pl-2';
+        const location = document.createElement('li');
         location.textContent = job.location;
-        location.className = 'text-darkgray';
+        location.className = 'text-darkgray list-disc pl-2';
+        
         contractDetails.appendChild(postedAt);
         contractDetails.appendChild(contractType);
         contractDetails.appendChild(location);
+        
         textDetails.appendChild(contractDetails);
-
         jobDetails.appendChild(textDetails);
 
 
         const roleLanguagesTools = document.createElement('div');
-        roleLanguagesTools.className = 'flex flex-wrap sm:flex-nowrap gap-2 md:flex-nowrap';
+        roleLanguagesTools.className = 'flex flex-wrap sm:flex-nowrap gap-4 md:flex-nowrap';
         const roleElement = document.createElement('p');
         roleElement.textContent = job.role;
-        roleElement.className = 'bg-lightfiler px-3 text-primary font-bold cursor-pointer hover:bg-primary hover:text-white rounded-lg';
+        roleElement.className = 'bg-lightfiler px-3 py-1 text-primary font-bold cursor-pointer hover:bg-primary hover:text-white rounded-md';
         roleElement.addEventListener('click', () => toggleFilter(job.role));
         roleLanguagesTools.appendChild(roleElement);
 
         const levelElement = document.createElement('p');
         levelElement.textContent = job.level;
-        levelElement.className = 'bg-lightfiler px-3 text-primary font-bold cursor-pointer hover:bg-primary hover:text-white rounded-lg';
+        levelElement.className = 'bg-lightfiler px-3 py-1 text-primary font-bold cursor-pointer hover:bg-primary hover:text-white rounded-md';
         levelElement.addEventListener('click', () => toggleFilter(job.level));
         roleLanguagesTools.appendChild(levelElement);
 
         job.languages.forEach(language => {
           const languageElement = document.createElement('p');
           languageElement.textContent = language;
-          languageElement.className = 'bg-lightfiler px-3 text-primary font-bold cursor-pointer hover:bg-primary hover:text-white rounded-lg';
+          languageElement.className = 'bg-lightfiler px-3 py-1 text-primary font-bold cursor-pointer hover:bg-primary hover:text-white rounded-md';
           languageElement.addEventListener('click', () => toggleFilter(language));
           roleLanguagesTools.appendChild(languageElement);
         });
@@ -130,7 +131,7 @@ function renderJobs(jobs) {
         job.tools.forEach(tool => {
           const toolElement = document.createElement('p');
           toolElement.textContent = tool;
-          toolElement.className = 'bg-lightfiler px-3 text-primary font-bold cursor-pointer hover:bg-primary hover:text-white rounded-lg';
+          toolElement.className = 'bg-lightfiler px-3 py-1 text-primary font-bold cursor-pointer hover:bg-primary hover:text-white rounded-md';
           toolElement.addEventListener('click', () => toggleFilter(tool));
           roleLanguagesTools.appendChild(toolElement);
         });
