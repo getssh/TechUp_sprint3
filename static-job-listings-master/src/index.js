@@ -64,8 +64,9 @@ function renderJobs(jobs) {
         jobDetails.appendChild(logoDiv);
 
         const textDetails = document.createElement('div');
+        textDetails.className = "flex flex-col gap-2";
         const companyInfo = document.createElement('div');
-        companyInfo.className = 'flex gap-2';
+        companyInfo.className = 'flex gap-3';
         const companyName = document.createElement('p');
         companyName.className = 'text-primary font-bold';
         companyName.textContent = job.company;
@@ -108,20 +109,20 @@ function renderJobs(jobs) {
         roleLanguagesTools.className = 'flex flex-wrap sm:flex-nowrap gap-2 md:flex-nowrap';
         const roleElement = document.createElement('p');
         roleElement.textContent = job.role;
-        roleElement.className = 'bg-lightfiler px-3 text-primary font-medium cursor-pointer hover:bg-primary hover:text-white rounded-lg';
+        roleElement.className = 'bg-lightfiler px-3 text-primary font-bold cursor-pointer hover:bg-primary hover:text-white rounded-lg';
         roleElement.addEventListener('click', () => toggleFilter(job.role));
         roleLanguagesTools.appendChild(roleElement);
 
         const levelElement = document.createElement('p');
         levelElement.textContent = job.level;
-        levelElement.className = 'bg-lightfiler px-3 text-primary font-medium cursor-pointer hover:bg-primary hover:text-white rounded-lg';
+        levelElement.className = 'bg-lightfiler px-3 text-primary font-bold cursor-pointer hover:bg-primary hover:text-white rounded-lg';
         levelElement.addEventListener('click', () => toggleFilter(job.level));
         roleLanguagesTools.appendChild(levelElement);
 
         job.languages.forEach(language => {
           const languageElement = document.createElement('p');
           languageElement.textContent = language;
-          languageElement.className = 'bg-lightfiler px-3 text-primary font-medium cursor-pointer hover:bg-primary hover:text-white rounded-lg';
+          languageElement.className = 'bg-lightfiler px-3 text-primary font-bold cursor-pointer hover:bg-primary hover:text-white rounded-lg';
           languageElement.addEventListener('click', () => toggleFilter(language));
           roleLanguagesTools.appendChild(languageElement);
         });
@@ -129,7 +130,7 @@ function renderJobs(jobs) {
         job.tools.forEach(tool => {
           const toolElement = document.createElement('p');
           toolElement.textContent = tool;
-          toolElement.className = 'bg-lightfiler px-3 text-primary font-medium cursor-pointer hover:bg-primary hover:text-white rounded-lg';
+          toolElement.className = 'bg-lightfiler px-3 text-primary font-bold cursor-pointer hover:bg-primary hover:text-white rounded-lg';
           toolElement.addEventListener('click', () => toggleFilter(tool));
           roleLanguagesTools.appendChild(toolElement);
         });
