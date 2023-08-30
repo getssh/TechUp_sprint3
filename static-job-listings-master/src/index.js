@@ -52,7 +52,7 @@ function renderJobs(jobs) {
     container.appendChild(filtersSection);
     filteredJobs.forEach((job) => {
         const jobContainer = document.createElement('div');
-        jobContainer.className = `flex py-5 flex-col md:flex-col xl:flex-row sm:flex-wrap lg:flex-nowrap justify-between items-center drop-shadow-md bg-white w-4/5 my-3 px-3 ${job.featured ? 'border-l-4 border-primary' : ''}`;
+        jobContainer.className = `flex py-5 flex-col md:flex-col xl:flex-row sm:flex-wrap lg:flex-nowrap justify-between items-center drop-shadow-md bg-white w-10/12 my-3 px-3 ${job.featured ? 'border-l-4 border-primary' : ''}`;
 
         const jobDetails = document.createElement('div');
         jobDetails.className = 'flex flex-col sm:flex-row items-center gap-5 p-2';
@@ -90,13 +90,13 @@ function renderJobs(jobs) {
         contractDetails.className = 'flex gap-10 list-none';
         const postedAt = document.createElement('li');
         postedAt.textContent = job.postedAt;
-        postedAt.className = 'text-darkgray';
+        postedAt.className = 'text-darkgray whitespace-nowrap';
         const contractType = document.createElement('li');
         contractType.textContent = job.contract;
-        contractType.className = 'text-darkgray list-disc pl-2';
+        contractType.className = 'text-darkgray list-disc pl-2 whitespace-nowrap';
         const location = document.createElement('li');
         location.textContent = job.location;
-        location.className = 'text-darkgray list-disc pl-2';
+        location.className = 'text-darkgray list-disc pl-2 whitespace-nowrap';
         
         contractDetails.appendChild(postedAt);
         contractDetails.appendChild(contractType);
