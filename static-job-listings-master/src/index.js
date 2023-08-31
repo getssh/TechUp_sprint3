@@ -4,7 +4,7 @@ const filters = [];
 let allJobs = [];
 
 const filtersSection = document.createElement('div');
-filtersSection.className = `filters-section flex flex-wrap sm:flex-nowrap bg-white justify-between items-center gap-2 py-5 px-4 w-10/12 min-h-10`;
+filtersSection.className = `filters-section flex flex-wrap sm:flex-nowrap bg-white justify-between items-center gap-2 py-5 px-4 w-10/12 min-h-10 drop-shadow-md mb-4 sm:mb-0`;
 // document.body.insertBefore(filtersSection, container);
 
 fetch('https://demo8445262.mockable.io/joblisting')
@@ -61,12 +61,13 @@ function renderJobs(jobs) {
     }
     filteredJobs.forEach((job) => {
         const jobContainer = document.createElement('div');
-        jobContainer.className = `flex py-5 flex-col md:flex-col xl:flex-row sm:flex-wrap lg:flex-nowrap justify-between items-center drop-shadow-md bg-white w-10/12 my-3 px-3 ${job.featured ? 'border-l-4 border-primary' : ''}`;
+        jobContainer.className = `flex py-5 flex-col md:flex-col xl:flex-row sm:flex-wrap lg:flex-nowrap justify-start sm:justify-between items-start sm:items-center drop-shadow-md bg-white w-10/12 my-6 sm:my-3 px-3 ${job.featured ? 'border-l-4 border-primary' : ''}`;
 
         const jobDetails = document.createElement('div');
-        jobDetails.className = 'flex flex-col sm:flex-row items-center gap-5 p-2';
+        jobDetails.className = 'flex flex-col sm:flex-row items-center gap-5 p-3 relative mt-20 sm:mt-0';
 
         const logoDiv = document.createElement('div');
+        logoDiv.className = 'self-start sm:self-center absolute sm:relative bottom-40 sm:bottom-0'
         const logoImage = document.createElement('img');
         logoImage.src = job.logo;
         logoDiv.appendChild(logoImage);
@@ -116,7 +117,7 @@ function renderJobs(jobs) {
 
 
         const roleLanguagesTools = document.createElement('div');
-        roleLanguagesTools.className = 'flex flex-wrap sm:flex-nowrap gap-4 md:flex-nowrap';
+        roleLanguagesTools.className = 'flex flex-wrap sm:flex-nowrap gap-4 md:flex-nowrap border-t border-darkgray sm:border-none pt-5 sm:pt-0 md:pt-5 mt-3 sm:mt-0 ';
         const roleElement = document.createElement('p');
         roleElement.textContent = job.role;
         roleElement.className = 'bg-lightfiler px-3 py-1 text-primary font-bold cursor-pointer hover:bg-primary hover:text-white rounded-md';
