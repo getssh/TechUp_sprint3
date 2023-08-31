@@ -4,7 +4,7 @@ const filters = [];
 let allJobs = [];
 
 const filtersSection = document.createElement('div');
-filtersSection.className = `filters-section flex flex-wrap sm:flex-nowrap bg-white justify-between items-center gap-2 py-5 px-4 w-10/12 min-h-10 drop-shadow-md mb-4 sm:mb-0`;
+filtersSection.className = `filters-section flex flex-wrap sm:flex-nowrap bg-white justify-between items-center gap-2 py-5 px-4 w-10/12 min-h-10 drop-shadow-lg mb-4 sm:mb-0`;
 // document.body.insertBefore(filtersSection, container);
 
 fetch('https://demo8445262.mockable.io/joblisting')
@@ -26,11 +26,11 @@ function renderFilters() {
     const filterElement = document.createElement('div');
     const fitlerText = document.createElement('span');
     fitlerText.className = 'py-1';
-    filterElement.className = 'filter text-primary bg-lighbg px-2 rounded-sm flex flex-between';
+    filterElement.className = 'filter text-primary bg-lighbg pl-2 rounded-sm flex flex-between';
     fitlerText.textContent = filter;
 
     const deleteButton = document.createElement('span');
-    deleteButton.className = 'delete-button hover:cursor-pointer hover:bg-verydark px-2 py-1 font-bold bg-primary text-white rounded-sm ml-2';
+    deleteButton.className = 'delete-button hover:cursor-pointer hover:bg-verydark px-3 py-1 font-bold bg-primary text-white rounded-r-md ml-2';
     deleteButton.textContent = 'X';
     deleteButton.addEventListener('click', () => removeFilter(filter));
 
@@ -61,15 +61,25 @@ function renderJobs(jobs) {
     }
     filteredJobs.forEach((job) => {
         const jobContainer = document.createElement('div');
-        jobContainer.className = `flex py-5 flex-col md:flex-col xl:flex-row sm:flex-wrap lg:flex-nowrap justify-start sm:justify-between items-start sm:items-center drop-shadow-md bg-white w-10/12 my-6 sm:my-3 px-3 ${job.featured ? 'border-l-4 border-primary' : ''}`;
+        jobContainer.className = `flex py-5 flex-col md:flex-row xl:flex-row sm:flex-wrap lg:flex-nowrap justify-start sm:justify-between items-start sm:items-center drop-shadow-lg bg-white w-10/12 my-6 sm:my-3 px-3 ${job.featured ? 'border-l-4 border-primary' : ''}`;
 
         const jobDetails = document.createElement('div');
-        jobDetails.className = 'flex flex-col sm:flex-row items-center gap-5 p-3 relative mt-20 sm:mt-0';
+        jobDetails.className = 'flex flex-col sm:flex-row items-center gap-5 p-3 absolute sm:reletive -top-16 sm:-top-0 relative mt-20 sm:mt-0';
+
+        // const logoDiv = document.createElement('div');
+        // logoDiv.className = 'self-start sm:self-center absolute sm:relative bottom-28 sm:bottom-0 w-16 sm:w-full'
+        // const logoImage = document.createElement('img');
+        // logoImage.className = 'max-w-full h-auto';
+        // logoImage.src = job.logo;
+        // logoDiv.appendChild(logoImage);
+        // jobDetails.appendChild(logoDiv);
+
 
         const logoDiv = document.createElement('div');
-        logoDiv.className = 'self-start sm:self-center absolute sm:relative bottom-40 sm:bottom-0'
+        logoDiv.className = 'self-start sm:self-center flex-shrink-0 absolute sm:relative bottom-28 sm:bottom-0 w-16 sm:w-auto';
         const logoImage = document.createElement('img');
         logoImage.src = job.logo;
+        logoImage.className = 'max-w-full h-auto';
         logoDiv.appendChild(logoImage);
         jobDetails.appendChild(logoDiv);
 
@@ -117,7 +127,7 @@ function renderJobs(jobs) {
 
 
         const roleLanguagesTools = document.createElement('div');
-        roleLanguagesTools.className = 'flex flex-wrap sm:flex-nowrap gap-4 md:flex-nowrap border-t border-darkgray sm:border-none pt-5 sm:pt-0 md:pt-5 mt-3 sm:mt-0 ';
+        roleLanguagesTools.className = 'flex flex-wrap sm:flex-nowrap gap-4 md:flex-nowrap border-t border-darkgray sm:border-none pt-5 sm:pt-0 md:pt-5 -mt-16 sm:mt-0 ';
         const roleElement = document.createElement('p');
         roleElement.textContent = job.role;
         roleElement.className = 'bg-lightfiler px-3 py-1 text-primary font-bold cursor-pointer hover:bg-primary hover:text-white rounded-md';
