@@ -4,7 +4,7 @@ const filters = [];
 let allJobs = [];
 
 const filtersSection = document.createElement('div');
-filtersSection.className = `filters-section flex flex-wrap sm:flex-nowrap bg-white justify-start gap-2 py-3 px-4`;
+filtersSection.className = `filters-section flex flex-wrap sm:flex-nowrap bg-white justify-between items-center gap-2 py-5 px-4 w-10/12 min-h-10`;
 // document.body.insertBefore(filtersSection, container);
 
 fetch('https://demo8445262.mockable.io/joblisting')
@@ -20,23 +20,30 @@ fetch('https://demo8445262.mockable.io/joblisting')
 
 function renderFilters() {
   filtersSection.innerHTML = '';
+  const filterElementContainer = document.createElement('div');
+  filterElementContainer.className = 'flex flex-wrap gap-2';
   filters.forEach(filter => {
     const filterElement = document.createElement('div');
-    filterElement.className = 'filter text-primary bg-lighbg px-2 rounded-lg flex flex-between';
-    filterElement.textContent = filter;
+    const fitlerText = document.createElement('span');
+    fitlerText.className = 'py-1';
+    filterElement.className = 'filter text-primary bg-lighbg px-2 rounded-sm flex flex-between';
+    fitlerText.textContent = filter;
 
     const deleteButton = document.createElement('span');
-    deleteButton.className = 'delete-button hover:cursor-pointer hover:bg-verydark px-2 bg-primary text-white rounded-md ml-3';
+    deleteButton.className = 'delete-button hover:cursor-pointer hover:bg-verydark px-2 py-1 font-bold bg-primary text-white rounded-sm ml-2';
     deleteButton.textContent = 'X';
     deleteButton.addEventListener('click', () => removeFilter(filter));
 
-    filterElement.appendChild(deleteButton);
-    filtersSection.appendChild(filterElement);
+    filterElement.appendChild(fitlerText)
+    filterElement.appendChild(deleteButton)
+    filterElementContainer.appendChild(filterElement)
+    // filterElementContainer.appendChild(deleteButton);
+    filtersSection.appendChild(filterElementContainer);
   });
 
   if (filters.length > 0) {
       const clearFiltersButton = document.createElement('button');
-      clearFiltersButton.className = 'clear-filters-button self-end text-primary font-bold hover:underline';
+      clearFiltersButton.className = 'clear-filters-button self-center text-primary font-bold hover:underline';
       clearFiltersButton.textContent = 'Clear';
       clearFiltersButton.addEventListener('click', clearAllFilters);
       filtersSection.appendChild(clearFiltersButton);
@@ -49,7 +56,9 @@ function renderJobs(jobs) {
     const filteredJobs = filters.length > 0 ? filterJobsByFilters(jobs, filters) : jobs;
     renderFilters();
 
-    container.appendChild(filtersSection);
+    if (filters.length) {
+      container.appendChild(filtersSection);
+    }
     filteredJobs.forEach((job) => {
         const jobContainer = document.createElement('div');
         jobContainer.className = `flex py-5 flex-col md:flex-col xl:flex-row sm:flex-wrap lg:flex-nowrap justify-between items-center drop-shadow-md bg-white w-10/12 my-3 px-3 ${job.featured ? 'border-l-4 border-primary' : ''}`;
