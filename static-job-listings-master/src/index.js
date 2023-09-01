@@ -4,9 +4,10 @@ const filters = [];
 let allJobs = [];
 
 const filtersSection = document.createElement('div');
-filtersSection.className = `filters-section flex flex-wrap sm:flex-nowrap bg-white justify-between items-center gap-2 py-5 px-4 w-10/12 min-h-10 drop-shadow-lg mb-4 sm:mb-0`;
+filtersSection.className = `filters-section flex flex-wrap sm:flex-nowrap bg-white justify-between items-center gap-2 py-5 px-4 w-10/12 min-h-10 drop-shadow-lg mb-0 relative -top-10`;
 // document.body.insertBefore(filtersSection, container);
 
+// fetch('../data.json')
 fetch('https://demo8445262.mockable.io/joblisting')
     .then(response => response.json())
     .then(data => {
@@ -65,15 +66,6 @@ function renderJobs(jobs) {
 
         const jobDetails = document.createElement('div');
         jobDetails.className = 'flex flex-col sm:flex-row items-center gap-5 p-3 absolute sm:reletive -top-16 sm:-top-0 relative mt-20 sm:mt-0';
-
-        // const logoDiv = document.createElement('div');
-        // logoDiv.className = 'self-start sm:self-center absolute sm:relative bottom-28 sm:bottom-0 w-16 sm:w-full'
-        // const logoImage = document.createElement('img');
-        // logoImage.className = 'max-w-full h-auto';
-        // logoImage.src = job.logo;
-        // logoDiv.appendChild(logoImage);
-        // jobDetails.appendChild(logoDiv);
-
 
         const logoDiv = document.createElement('div');
         logoDiv.className = 'self-start sm:self-center flex-shrink-0 absolute sm:relative bottom-28 sm:bottom-0 w-16 sm:w-auto';
