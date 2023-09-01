@@ -1,3 +1,5 @@
+import { fetchData } from './api.js';
+
 const container = document.querySelector('.container');
 const filters = [];
 
@@ -7,17 +9,15 @@ const filtersSection = document.createElement('div');
 filtersSection.className = `filters-section flex flex-wrap sm:flex-nowrap bg-white justify-between items-center gap-2 py-5 px-4 w-10/12 min-h-10 drop-shadow-lg mb-0 relative -top-10`;
 // document.body.insertBefore(filtersSection, container);
 
-// fetch('../data.json')
-fetch('https://demo8445262.mockable.io/joblisting')
-    .then(response => response.json())
-    .then(data => {
-        allJobs = data;
-        renderJobs(allJobs);
-    })
-    .catch(error => {
-        console.error('Data loading error:', error);
-        container.innerHTML = 'Error couldnt load data';
-    });
+fetchData()
+  .then(data => {
+    allJobs = data;
+    renderJobs(allJobs);
+  })
+  .catch(error => {
+    container.innerHTML = 'Error couldnt load data';
+    console.log(error)
+  });
 
 function renderFilters() {
   filtersSection.innerHTML = '';
